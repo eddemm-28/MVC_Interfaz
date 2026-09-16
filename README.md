@@ -54,7 +54,7 @@ GUIQuestions --> QuestionService.cambiarEstado()
 El mockup de la interfaz (código fuente en `diseno-interfaz.puml`) se
 encuentra en la raíz del repositorio.
 
-![Diseño de interfaz](diseno-interfaz.png)
+![Diseño de interfaz](principal.png)((adicionales.png))
 
 ## Cómo compilar y ejecutar
 
