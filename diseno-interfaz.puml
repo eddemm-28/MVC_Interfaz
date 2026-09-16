@@ -1,0 +1,34 @@
+@startuml
+
+title Banco de Preguntas Saber Pro - Diseño de Interfaz
+
+skinparam componentStyle rectangle
+skinparam shadowing true
+skinparam roundCorner 15
+
+rectangle "VENTANA PRINCIPAL\n\nGESTIÓN DE PREGUNTAS" {
+
+  rectangle "SELECCIONAR PREGUNTA\n\nPregunta:\n[ ComboBox: Seleccione una pregunta ]" as selector
+
+  rectangle "FORMULARIO DE PREGUNTA\n\nId: P-001\nNombre: La idea principal de un texto\nMateria: Lectura Crítica\n\nPREGUNTA\n¿Por qué una afirmación de un autor se considera un juicio de valor y no un hecho?\n\nOPCIONES\nA. Porque siempre dice la verdad sobre los hechos\nB. Porque expresa la opinión del autor sobre algo, y puede ser aceptada o rechazada con razones\nC. Porque es un dato estadístico comprobado\nD. Porque nunca aparece en textos argumentativos\n\nRespuesta correcta: B\n\nEstado actual:\n[ Borrador ]\n\nNuevo estado:\n[ ComboBox: Borrador ]\n\n[ Actualizar estado ]" as formulario
+}
+
+rectangle "VISTA DE ESTADÍSTICAS\n\nPreguntas por estado\n----------------------\nBorrador: 2\nPendiente de revisión: 2\nEliminada: 1" as estadisticas
+
+rectangle "VISTA GRÁFICA\n\nDistribución de preguntas\n\n ◜───────◝\n | BORRADOR |\n |  40%   |\n ◟───────◞\n\nBorrador: 40%\nPendiente de revisión: 40%\nEliminada: 20%" as grafica
+
+selector --> formulario : cargar
+formulario --> estadisticas : notificar cambio\n(patrón Observer)
+formulario --> grafica : notificar cambio\n(patrón Observer)
+
+note bottom of estadisticas
+  GUIObserver1: implementa Observer,
+  se actualiza al recibir update()
+end note
+
+note bottom of grafica
+  GUIObserver2: implementa Observer,
+  redibuja el pastel al recibir update()
+end note
+
+@enduml
