@@ -78,4 +78,13 @@ java -cp bin presentation.Main
 
 ## Autor
 
-Yuu — Ingeniería de Sistemas, Universidad del Cauca
+Eddy Sanchez (Yuu) — Ingeniería de Sistemas, Universidad del Cauca
+
+# Uso de Inteligencia Artificial
+ 
+Para el desarrollo de este taller se utilizó Claude (Anthropic) como
+herramienta de apoyo.
+El diseño de la solución (capas, patrones y estructura de paquetes) fue
+definido por el enunciado del taller; la IA se usó como apoyo para
+implementarlo y para entender en profundidad su funcionamiento, no para
+reemplazar el proceso de aprendizaje.
